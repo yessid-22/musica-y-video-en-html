@@ -1,24 +1,28 @@
-const fila = document.querySelector('.contenedor-carusel');
-const videos = document.querySelector('.video')
+//variable fijo de contenedores carusel
+const fila1 = document.querySelector('.contenedor-carusel');
+const fila2 = document.querySelector('.contenedor-carusel-musica');
 
+//variables para las flechas
 const flechaIzq = document.getElementById('flecha-izq');
 const flechaDer = document.getElementById('flecha-der');
 
+const flechaIzqMusic = document.getElementById('flecha-izq-music');
+const flechaDerMusic = document.getElementById('flecha-der-music');
+
 //accion flecha derecha
 flechaDer.addEventListener('click', () => {
-    fila.scrollLeft += fila.offsetWidth;
+    fila1.scrollLeft += fila1.offsetWidth;
 });
 //accion flaceha izquierda
 flechaIzq.addEventListener('click', () => {
-    fila.scrollLeft -= fila.offsetWidth;
+    fila1.scrollLeft -= fila1.offsetWidth;
 });
 
-videos.forEach((video) =>{
-    video.addEventListener('mauseenter', (e) =>{
-        const elemento = e.currentTarget;
-        setTimeout(() => {
-            videos.forEach(video => video.classList.remove('hover'));
-            elemento.classList.add('hover');
-        }, 300);
-    });
+//accion flecha derecha para musica
+flechaDerMusic.addEventListener('click', () => {
+    fila2.scrollLeft += fila2.offsetWidth;
+});
+//accion flaceha izquierda para musica
+flechaIzqMusic.addEventListener('click', () => {
+    fila2.scrollLeft -= fila2.offsetWidth;
 });
