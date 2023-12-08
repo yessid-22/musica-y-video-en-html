@@ -1,3 +1,4 @@
+/*Estilos generales*/
 :root {
 	--rojo: #E50914;
 	--fondo: #141414;
@@ -47,8 +48,8 @@ header nav a.activo {
 	color: #FFF;
 }
 
-/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
-.pelicula-principal {
+/* ---- ----- ----- Video Principal ----- ----- ----- */
+.media-principal {
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
@@ -59,19 +60,19 @@ header nav a.activo {
 	display: flex;
 	align-items: end;
 }
-
-.pelicula-principal .contenedor {
+/* ---- ----- ----- Video Principal ----- ----- ----- */
+.media-principal .contenedor {
 	margin: 0 auto;
 	margin-bottom: 6.25em;
 }
 
-.pelicula-principal .titulo {
+.media-principal .titulo {
 	font-weight: 600;
 	font-size: 3.12em;
 	margin-bottom: 0.4em;
 }
 
-.pelicula-principal .descripcion {
+.media-principal .descripcion {
 	font-weight: normal;
 	font-size: 1em;
 	line-height: 1.75em;
@@ -79,7 +80,7 @@ header nav a.activo {
 	margin-bottom: 1.25em;
 }
 
-.pelicula-principal .boton {
+.media-principal .boton {
 	background: rgba(0,0,0, 0.5);
 	border: none;
 	border-radius: 0.31em;
@@ -92,12 +93,12 @@ header nav a.activo {
 }
 
 
-.pelicula-principal .boton:hover {
+.media-principal .boton:hover {
 	background: #fff;
 	color: #000;
 }
 
-.pelicula-principal .boton i {
+.media-principal .boton i {
 	margin-right: 1.25em;
 }
 
@@ -108,7 +109,7 @@ header nav a.activo {
 	align-items: center;
 }
 
-.contenedor-titulo-controles h3 {
+.contenedor-titulo-controles h3,h2 {
 	color: #fff;
 	font-size: 30px;
 }
@@ -128,18 +129,20 @@ header nav a.activo {
 }
 
 /* contenedor principal y flechas*/
-.videos {
+.media {
 	margin-bottom: 70px;
 }
 
-.videos .contenedor-principal {
+.media .contenedor-principal {
 	display: flex;
 	align-items: center;
 	position: relative;
 }
 
-.videos .contenedor-principal .flecha-izq,
-.videos .contenedor-principal .flecha-der {
+.media .contenedor-principal .flecha-izq,
+.media .contenedor-principal .flecha-der,
+.media .contenedor-principal .flecha-izq-music,
+.media .contenedor-principal .flecha-der-music {
 	position: absolute;
 	border: none;
 	background: rgba(0,0,0,0.3);
@@ -154,42 +157,51 @@ header nav a.activo {
 	transition: .2s ease all;
 }
 
-.videos .contenedor-principal .flecha-izq:hover,
-.videos .contenedor-principal .flecha-der:hover{
+.media .contenedor-principal .flecha-izq:hover,
+.media .contenedor-principal .flecha-der:hover,
+.media .contenedor-principal .flecha-izq-music:hover,
+.media .contenedor-principal .flecha-izq-music:hover
+{
 	background: rgba(0, 0, 0, .9);
 }
-.videos .contenedor-principal .flecha-izq {
+.media .contenedor-principal .flecha-izq,
+.media .contenedor-principal .flecha-izq-music {
 	left: 0;
 }
 
-.videos .contenedor-principal .flecha-der {
+.media .contenedor-principal .flecha-der,
+.media .contenedor-principal .flecha-der-music {
 	right: 0;
 }
 
 /*carusel*/
-.videos .contenedor-carusel {
+.media .contenedor-carusel,
+.media .contenedor-carusel-musica {
 	width: 100%;
 	padding: 20px 0;
 	overflow: hidden;
 	scroll-behavior: smooth;
 }
 
-.videos .contenedor-carusel .carusel {
+.media .contenedor-carusel .carusel,
+.media .contenedor-carusel-musica .carusel {
 	display: flex;
 	flex-wrap: nowrap;
 }
 
-.videos .contenedor-carusel .carusel .video {
+.media .contenedor-carusel .carusel .video,
+.media .contenedor-carusel-musica .carusel .musica {
 	min-width: 20%;
 	transition: .3s ease all;
 	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
 }
-.videos .contenedor-carusel .carusel .video.hover {
+.media .contenedor-carusel .carusel .video.hover {
 	transform: scale(1.2);
 	transform-origin: center;
 }
 
-.videos .contenedor-carusel .carusel .video image {
+.media .contenedor-carusel .carusel .video img,
+.media .contenedor-carusel-musica .carusel .musica img {
 	width: 100%;
 	vertical-align: top;
 }
@@ -206,27 +218,31 @@ header nav a.activo {
 		text-align: center;
 	}
 
-	.pelicula-principal {
+	.media-principal {
 		font-size: 14px;
 	}
 
-	.pelicula-principal .descripcion {
+	.media-principal .descripcion {
 		max-width: 100%;
 	}
 
-	.videos .contenedor-carusel {
+	.media .contenedor-carusel,
+	.media .contenedor-carusel-musica {
 		overflow: visible;
 	}
-
-	.videos .contenedor-carusel .carusel {
+	/*Cambia mosaico con pantalla pequeña */
+	.media .contenedor-carusel .carusel,
+	.media .contenedor-carusel-musica .carusel {
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
 		gap: 20px;
 	}
-
-	.videos .indicadores,
-	.videos .flecha-izq,
-	.videos.flecha-der {
+	/*Ocultar flechas con pantalla pequeña*/
+	.media .indicadores,
+	.media .flecha-izq,
+	.media .flecha-der,
+	.media .flecha-izq-music,
+	.media .flecha-der-music {
 		display: none;
 	}
 }
